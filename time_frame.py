@@ -70,20 +70,20 @@ class TimeFrame:
         time_frame.columnconfigure(1, weight=1)
         time_frame.columnconfigure(2, weight=1, uniform="equal_width")
 
-        month_day_frame = tkinter.Frame(time_frame, background=self.main_frame_bg)
-        month_day_frame.rowconfigure(0, weight=1)
-        month_day_frame.columnconfigure(0, weight=1)
-        month_day_frame.columnconfigure(1, weight=1)
+        self.month_day_frame = tkinter.Frame(time_frame, background=self.main_frame_bg)
+        self.month_day_frame.rowconfigure(0, weight=1)
+        self.month_day_frame.columnconfigure(0, weight=1)
+        self.month_day_frame.columnconfigure(1, weight=1)
         # month_day_frame.columnconfigure(2, weight=1)
         # month_day_frame.columnconfigure(3, weight=1)
-        month_day_frame.grid(row=0, column=0, sticky=tkinter.NSEW, padx=self.clock_section_padx)
+        self.month_day_frame.grid(row=0, column=0, sticky=tkinter.NSEW, padx=self.clock_section_padx)
 
-        self.month_label = tkinter.Label(month_day_frame, text="---", font=self.clock_font,
+        self.month_label = tkinter.Label(self.month_day_frame, text="---", font=self.clock_font,
                                     background=self.time_frame_bg, foreground=label_txt_color)
         self.month_label.grid(row=0, column=0, padx=self.clock_section_padx, ipadx=self.clock_ipad,
                          ipady=self.clock_ipad, sticky=tkinter.NSEW)
 
-        self.day_label = tkinter.Label(month_day_frame, text="--", font=self.clock_font,
+        self.day_label = tkinter.Label(self.month_day_frame, text="--", font=self.clock_font,
                                   background=self.time_frame_bg, foreground=label_txt_color)
         self.day_label.grid(row=0, column=1, padx=self.clock_section_padx, ipadx=self.clock_ipad, ipady=self.clock_ipad, sticky=tkinter.NSEW)
 

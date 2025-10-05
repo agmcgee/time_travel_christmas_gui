@@ -48,9 +48,11 @@ class TimeTravelApp:
         self.start_udp_server()
 
     def on_resize(self, event):
+        frame_width = self.present_time_frame.month_day_frame.winfo_width()
+        frame_height = self.present_time_frame.month_day_frame.winfo_height()
         if event.widget == self.master:
-            new_label_size = int(min(event.width / 8, event.height / 8))
-            new_era_label_size = int(min(event.width / 10, event.height / 10))
+            new_label_size = int(min(frame_width / 2, frame_height / 2))
+            new_era_label_size = int(min(frame_width / 2, frame_width / 2))
             new_frame_size = int(min(event.width / 18, event.height / 18))
 
             self.dest_frame.clock_font.configure(size=new_label_size)
