@@ -15,7 +15,7 @@ class TimeFrame:
         self.digit_fg_color = digit_fg_color
         self.main_frame_bg = "#36454F"
         self.time_frame_bg = "black"
-        self.clock_section_padx = 24
+        self.clock_section_padx = 4
         self.clock_ipad = 8
 
         green_photo = Image.open("lime-green.png")
@@ -67,13 +67,13 @@ class TimeFrame:
         time_frame = tkinter.Frame(parent, background=self.main_frame_bg)
         time_frame.rowconfigure(0, weight=1)
         time_frame.columnconfigure(0, weight=1, uniform="equal_width")
-        time_frame.columnconfigure(1, weight=1)
+        time_frame.columnconfigure(1, weight=1, uniform="equal_width")
         time_frame.columnconfigure(2, weight=1, uniform="equal_width")
 
         self.month_day_frame = tkinter.Frame(time_frame, background=self.main_frame_bg)
         self.month_day_frame.rowconfigure(0, weight=1)
-        self.month_day_frame.columnconfigure(0, weight=1)
-        self.month_day_frame.columnconfigure(1, weight=1)
+        self.month_day_frame.columnconfigure(0, weight=1, uniform="equal_width")
+        self.month_day_frame.columnconfigure(1, weight=1, uniform="equal_width")
         # month_day_frame.columnconfigure(2, weight=1)
         # month_day_frame.columnconfigure(3, weight=1)
         self.month_day_frame.grid(row=0, column=0, sticky=tkinter.NSEW, padx=self.clock_section_padx)
@@ -90,7 +90,7 @@ class TimeFrame:
         year_frame = tkinter.Frame(time_frame, background=self.main_frame_bg)
         year_frame.rowconfigure(0, weight=1)
         year_frame.columnconfigure(0, weight=1, uniform="equal_width")
-        year_frame.columnconfigure(1, weight=1)
+        year_frame.columnconfigure(1, weight=1, uniform="equal_width")
         # year_frame.columnconfigure(2, weight=1)
         # year_frame.columnconfigure(3, weight=1)
         year_frame.grid(row=0, column=1, sticky=tkinter.NSEW, padx=self.clock_section_padx)

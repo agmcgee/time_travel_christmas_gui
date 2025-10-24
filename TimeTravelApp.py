@@ -51,9 +51,9 @@ class TimeTravelApp:
         frame_width = self.present_time_frame.month_day_frame.winfo_width()
         frame_height = self.present_time_frame.month_day_frame.winfo_height()
         if event.widget == self.master:
-            new_label_size = int(min(frame_width / 2, frame_height / 2))
-            new_era_label_size = int(min(frame_width / 2, frame_width / 2))
-            new_frame_size = int(min(event.width / 18, event.height / 18))
+            new_label_size = int(min(frame_width / 2.5, frame_height / 2.5))
+            new_era_label_size = int(min(frame_width / 2.5, frame_width / 2.5))
+            new_frame_size = int(min(event.width / 20, event.height / 20))
 
             self.dest_frame.clock_font.configure(size=new_label_size)
             self.dest_frame.era_font.configure(size=new_era_label_size)
@@ -148,9 +148,11 @@ class TimeTravelApp:
 
     def enter_fullscreen(self, event):
         self.master.attributes('-fullscreen', True)
+        # self.on_resize(event)
 
     def exit_fullscreen(self, event):
         self.master.attributes('-fullscreen', False)
+        # self.on_resize(event)
 
 
 def main():
